@@ -1,4 +1,4 @@
-import styles from './styles.css'
+import styles from './styles.scss'
 
 var d3 = require('d3-selection')
 

@@ -11,18 +11,22 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
                         {
                             loader: 'css-loader',
                             options: {
-                                modules: true
+                                modules: true,
+                                sourceMap: true
                             }
                         },
                         {
                             loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
                         }
                     ]
                 })
@@ -32,5 +36,6 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("bundle.css"),
         new HtmlWebpackPlugin()
-    ]
+    ],
+    devtool: 'source-map'
 }
