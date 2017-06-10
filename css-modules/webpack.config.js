@@ -1,3 +1,4 @@
+var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -6,6 +7,7 @@ module.exports = {
         app: './app.js'
     },
     output: {
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
